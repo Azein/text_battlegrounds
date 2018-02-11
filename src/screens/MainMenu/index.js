@@ -2,7 +2,13 @@
 import React, { Component } from 'react'
 import { AnimatedButton } from 'ui/components/Button'
 import isElectron from 'is-electron'
-import { Layout, Background, ActiveLayer, MenuContainer, ButtonsContainer } from './styled'
+import {
+  Layout,
+  Background,
+  ActiveLayer,
+  MenuContainer,
+  ButtonsContainer,
+} from './styled'
 
 const audioTheme = require('./pubg_main.mp3')
 
