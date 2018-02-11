@@ -1,5 +1,3 @@
-import { transparentize } from 'polished'
-
 const color = {
   textWhite: '#fff',
   primaryBlue: '#2979FF',
@@ -7,9 +5,7 @@ const color = {
   lightestTeal: '#B2DFDB',
   lightestBlue: '#B3E5FC',
   primaryTeal: '#009688',
-  darkerTeal: '#00796B'
+  darkerTeal: '#00796B',
 }
 
-export {
-  color,
-}
+export { color }

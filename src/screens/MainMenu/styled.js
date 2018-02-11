@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+const bgImage = require('./bg.png')
+
 const Layout = styled.div`
   height: 100%;
   width: 100%;
@@ -13,8 +15,10 @@ const Background = styled.div`
   height: 100%;
   width: 100%;
   position: absolute;
-  background-size: contain;
-  filter: grayscale(0.8) blur(2px);
+  background: url(${bgImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(0.8);
   z-index: 1;
 `
 
@@ -31,7 +35,9 @@ const ActiveLayer = styled.div`
 const MenuContainer = styled.div`
   height: 480px;
   width: 640px;
-  background: rgba(178, 223, 219, 0.70);
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: rgba(178, 223, 219, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,10 +55,4 @@ const ButtonsContainer = styled.div`
   align-items: center;
 `
 
-export {
-  Layout,
-  Background,
-  ActiveLayer,
-  MenuContainer,
-  ButtonsContainer,
-}
+export { Layout, Background, ActiveLayer, MenuContainer, ButtonsContainer }

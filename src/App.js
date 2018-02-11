@@ -1,14 +1,27 @@
 import React from 'react'
-import logo from './logo.svg'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import * as theme from 'ui/theme'
+import MainMenu from 'screens/MainMenu'
 import './App.css'
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Text Battlegrounds</h1>
-    </header>
-  </div>
+  <Router>
+    <div className="App">
+      <ThemeProvider theme={theme}>
+        <Route
+          exact
+          path="/"
+          component={() => [
+            <header className="App-header" key={'header'}>
+              <h1 className="App-title">Text Battlegrounds</h1>
+            </header>,
+            <MainMenu key={'main_menu'} />,
+          ]}
+        />
+      </ThemeProvider>
+    </div>
+  </Router>
 )
 
 export default App
