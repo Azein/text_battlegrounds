@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { createDynamix } from 'redux-dynamix'
 import rootReducer from './RootReducer'
 
@@ -10,7 +10,10 @@ const logger = (store) => (next) => (action) => {
 }
 
 const configureStore = () => {
-  const store = createStore(rootReducer, createDynamix(), applyMiddleware(logger))
+  const store = createStore(
+    rootReducer,
+    compose(createDynamix(), applyMiddleware(logger)),
+  )
   return store
 }
 
