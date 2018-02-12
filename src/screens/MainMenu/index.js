@@ -9,6 +9,7 @@ import {
   MenuContainer,
   ButtonsContainer,
 } from './styled'
+import Header from '../parts/header'
 
 const audioTheme = require('./pubg_main.mp3')
 
@@ -26,11 +27,18 @@ export default class MainMenu extends Component<Props, State> {
     return (
       <Layout>
         <audio src={audioTheme} />
+        <Header />
         <Background />
         <ActiveLayer>
           <MenuContainer>
             <ButtonsContainer>
-              <AnimatedButton>Новая игра</AnimatedButton>
+              <AnimatedButton
+                onClick={() => {
+                  this.props.history.push('charCreation')
+                }}
+              >
+                Новая игра
+              </AnimatedButton>
               <AnimatedButton>Загрузить игру</AnimatedButton>
               {isElectron() && (
                 <AnimatedButton

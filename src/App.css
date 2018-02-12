@@ -29,12 +29,14 @@ body {
 .App-header {
   background-color: #222;
   height: 50px;
+  width: 100%;
   flex-grow: 0;
   padding: 5px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .App-title {
