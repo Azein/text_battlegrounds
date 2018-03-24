@@ -1,13 +1,9 @@
 import styled from 'styled-components'
+import { Layout } from 'ui/components/Layout'
 
 const bgImage = require('./bg.png')
 
-const Layout = styled.div`
-  height: 100%;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+const StyledLayout = styled(Layout)`
   justify-content: center;
   align-items: center;
 `
@@ -56,4 +52,10 @@ const ButtonsContainer = styled.div`
   align-items: center;
 `
 
-export { Layout, Background, ActiveLayer, MenuContainer, ButtonsContainer }
+export {
+  StyledLayout,
+  Background,
+  ActiveLayer,
+  MenuContainer,
+  ButtonsContainer,
+}

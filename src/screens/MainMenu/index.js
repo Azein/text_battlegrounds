@@ -3,13 +3,13 @@ import React, { Component } from 'react'
 import { AnimatedButton } from 'ui/components/Button'
 import isElectron from 'is-electron'
 import {
-  Layout,
+  StyledLayout,
   Background,
   ActiveLayer,
   MenuContainer,
   ButtonsContainer,
 } from './styled'
-import Header from '../parts/header'
+import Header from 'screens/parts/header'
 
 const audioTheme = require('./pubg_main.mp3')
 
@@ -25,7 +25,7 @@ if (isElectron()) {
 export default class MainMenu extends Component<Props, State> {
   render() {
     return (
-      <Layout>
+      <StyledLayout>
         <audio src={audioTheme} />
         <Header />
         <Background />
@@ -52,7 +52,7 @@ export default class MainMenu extends Component<Props, State> {
             </ButtonsContainer>
           </MenuContainer>
         </ActiveLayer>
-      </Layout>
+      </StyledLayout>
     )
   }
 }
