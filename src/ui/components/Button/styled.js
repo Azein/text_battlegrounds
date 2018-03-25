@@ -6,10 +6,12 @@ const bgColors = {
   primaryTeal: 'darkerTeal',
 }
 
-const getHoverBackground = ({ theme, background }) => theme.color[bgColors[background]]
+const getHoverBackground = ({ theme, background }) =>
+  theme.color[bgColors[background]]
 
 const StyledButton = styled.button`
-  ${control}
+  ${control};
+
   height: 40px;
   color: ${({ theme }) => theme.color.textWhite};
   background: ${({ theme, background }) => theme.color[background]};
@@ -17,8 +19,8 @@ const StyledButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  &:hover{
-    background: ${(props) => getHoverBackground(props)}
+  &:hover {
+    background: ${(props) => getHoverBackground(props)};
   }
 `
 
@@ -38,11 +40,10 @@ const AnimationLayer = styled.div`
   z-index: 18;
   transform: rotate(45deg);
   transition: all 0.3s;
-  `
+`
 
 const AnimatedContainer = styled.button`
-  ${control}
-  position: relative;
+  ${control} position: relative;
   overflow: hidden;
   width: 200px;
   height: 40px;
@@ -54,7 +55,7 @@ const AnimatedContainer = styled.button`
   outline: none;
   color: ${({ theme }) => theme.color.textWhite};
 
-  &:hover{
+  &:hover {
     ${AnimationLayer} {
       height: 340%;
       opacity: 1;
@@ -63,17 +64,13 @@ const AnimatedContainer = styled.button`
       color: ${({ theme, background }) => theme.color[background]};
     }
   }
-  &:active{
+  &:active {
     ${AnimationLayer} {
       height: 380%;
     }
   }
 `
 
-export {
-  AnimatedContainer,
-  TextLayer,
-  AnimationLayer,
-}
+export { AnimatedContainer, TextLayer, AnimationLayer }
 
 export default StyledButton
